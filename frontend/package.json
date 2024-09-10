@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.7",
+    "chatapp": "file:..",
     "cookie-parser": "^1.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -26,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "building": "npm install && npm run build && npm install --prefix backend",
-    "starting":"node backend/index.js",
+    "starting": "node backend/index.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

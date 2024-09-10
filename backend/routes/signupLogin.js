@@ -97,17 +97,21 @@ if(!id){
 
     if(user.profilePic.publicId != null){
       
-    cloudinary.uploader.destroy(user.profilePic.publicId)
+   await  cloudinary.uploader.destroy(user.profilePic.publicId)
   }
     
     const result = await cloudinary.uploader.upload(req.file.path , {
       folder:'profile_pic'
    });
+   try {
+    fs.unlink(path.join(__dirname,`../../frontend/src/images/${req.file.filename}` ),(error)=>{
+     if(error){console.log(error)}
+        
+      })
+   } catch (error) {
+    return 
+   }
    
-   fs.unlink(path.join(__dirname,`../../forntend/src/images/${req.file.filename}` ),(error)=>{
-    if(error){
-      return res.status(500).send({message:"some error occurred"})}
-  })
    
  await    User.findOneAndUpdate({_id:id},{"profilePic.src":result.secure_url,"profilePic.publicId":result.public_id})
 
@@ -117,6 +121,7 @@ const trying = await connections.updateMany({connections: {$elemMatch: {member:u
     res.send({message:"profile picture successfully saved",profilePic:result.secure_url})
    } catch (error) {
     res.status(500).send({message:"some error occurred"})
+    console.log(error)
   
    }
   
@@ -144,10 +149,14 @@ router.post("/grouppic",verification1,upload.single("file"),async (req,res)=>{
       const result = await cloudinary.uploader.upload(req.file.path , {
         folder:'group_profile_pic'
      });
+    try {
+      fs.unlink(path.join(__dirname,`../../frontend/src/images/${req.file.filename}` ),(error)=>{
+        if(error){console.log(error)}
+      })
+    } catch (error) {
+      return 
+    }
     
-     fs.unlink(path.join(__dirname,`../../frontend/src/images/${req.file.filename}` ),(error)=>{
-      if(error){return res.status(500).send({message:"some error occurred"})}
-    })
 
    await    groupChat.findOneAndUpdate({admin:req.query.admin,groupname:req.query.groupname},{"groupProfilePic.src":result.secure_url,"groupProfilePic.publicId":result.public_id})
    
