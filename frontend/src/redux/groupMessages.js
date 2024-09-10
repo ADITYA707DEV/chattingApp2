@@ -26,7 +26,7 @@ reducers:{
       
         state.message = [...state.message,action.payload]
         
-        console.log(state.message)
+
         
     },
     resetGroupMessageReceiveCart:()=>{

@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const makingEvent = createAsyncThunk('makingEvent', async function ( {event, data} ) {
-console.log("checking")
+
   return await socketclient.emit(event,data);
 });
 

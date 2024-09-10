@@ -17,8 +17,6 @@ reducers:{
         state.userMembers = action.payload.members
       state.groups= action.payload.groups
       state.memberArray = action.payload.members.map((item)=>{
-        console.log("these are my mehnta yeeeee")
-        console.log(state.groups)
         
        return (item.member)
   

@@ -47,16 +47,15 @@ const __dirname1 = path.resolve()
 if(process.env.NODE_ENV == "production"){
   
   app.use(express.static(path.join(__dirname1,"./frontend/build")))
-  console.log("this error is coming")
+
   app.get("*",(req,res)=>{
     try {
 
       res.sendFile(path.resolve(__dirname1,"./","frontend","build","index.html"))
       
     } catch (error) {
-      res.status(400).send({message:"file not"})
-      console.log("this is error")
-      console.log(error)
+      res.status(400).send({message:"file not found"})
+    
     }
    
   })
@@ -70,13 +69,14 @@ io.on("connection", (socket) => {
 
 
   socket.on("setup", (userdata) => {
-  
+
     socket.join(userdata.email);
   })
 
   socket.on("join chat", (data) => {
-console.log("this is running")
-console.log(data)
+
+
+
     // if (!(rooms.includes(data.user))) {
 
 
@@ -116,8 +116,7 @@ console.log(data)
          socket.leave(data.user)
      })
 socket.on("join groupchat",(groupname)=>{
- console.log("joined")
- console.log(groupname)
+
     socket.join(groupname.name)
     
 })
@@ -127,7 +126,7 @@ socket.on("group messaging",(data)=>{
 })
 
 socket.on("disconnect",()=>{
-  console.log("user is disconnected")
+
 })
 
 

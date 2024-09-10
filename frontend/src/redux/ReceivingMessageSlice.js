@@ -5,7 +5,7 @@ import { socketclient } from "..";
 
 export const getMessage = createAsyncThunk("getMessage",async (params,{dispatch})=>{
 
-      console.log(params)
+      
             return await  socketclient.on(`messageFor${params}`,(messageReceived)=>{
             
             dispatch(setMessage(messageReceived))
@@ -27,9 +27,8 @@ reducers:{
       
         state.message = [...state.message,action.payload]
         state.sender = action.payload.sender
-        console.log(state.message)
-        console.log(state.sender)
-        console.log("dipsatched")
+     
+      
     },
     resetMessageReceiveCart:()=>{
       return initialState

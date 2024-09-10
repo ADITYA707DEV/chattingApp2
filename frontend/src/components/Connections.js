@@ -19,7 +19,7 @@ import { groupTypingAsync } from '../redux/groupTypingSlice'
 function Connections() {
 
   const userdetail = useSelector((state) => { return state.userDetail.userDetail })
- console.log(userdetail)
+
   const dispatch = useDispatch()
   const searchedUser = useSelector((state) => { return state.queryUser.searchedUser })
 
@@ -52,14 +52,14 @@ const groupElementVisibility = ()=>{
   useEffect(()=>{
    
     
-    console.log("running")
+ 
 
     
     dispatch(getMessage(userdetail.email))
     dispatch(userTyping(userdetail.email))
     dispatch(getGroupMessage())
     dispatch(groupTypingAsync())
-    console.log("connection is rendering so any times")
+
     })
     
     

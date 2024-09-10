@@ -3,9 +3,13 @@ import { useSelector,useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { resetQueryUser } from '../redux/queryUserSlice'
 import { setUserDetail } from '../redux/userDetailSlice'
+import { useNavigate } from 'react-router-dom'
+import { setAlert } from '../redux/AlertSlice'
+
 
 function ConnectionCards() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const searchedUser = useSelector((state) => { return state.queryUser.searchedUser })
 
   const userdetail = useSelector((state) => { return state.userDetail.userDetail })
@@ -34,6 +38,15 @@ function ConnectionCards() {
   dispatch(setUserDetail({user: response1.newuserdetails,members: (response1.newdetails).connections,groups: (response1.newdetails).groups}))
   
 dispatch(resetQueryUser())
+if(res1.status == 200){
+
+   
+   dispatch(setAlert({show:true,text:" the connected member will be able to view your message once they refreshed their app, app is going to refresh itself now",heading:"important!"}))
+   setTimeout(()=>{
+    navigate(0)
+   },8000)
+ 
+}
   //  dispatch(resetQueryUser())
   //   const res2 = await fetch("http://localhost:5000/chatting/getmessages", {
   //     method: "POST",

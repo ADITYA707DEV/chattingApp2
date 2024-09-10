@@ -3,12 +3,14 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setAlert } from '../redux/AlertSlice'
+import { useNavigate } from 'react-router-dom'
  
 import Alerts from './Alerts'
 
 
 function Singuppage() {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [userCredentials, setUserCredentails] = useState(null)
 
@@ -42,6 +44,7 @@ function Singuppage() {
         const res2 = await response2.json()
         
         if(response2.status === 200){        dispatch(setAlert({show:true,text:res2.message,heading:"success!"}))
+            navigate("/login")
         }else{      dispatch(setAlert({show:true,text:res2.message,heading:"error!"}))}
 
     }

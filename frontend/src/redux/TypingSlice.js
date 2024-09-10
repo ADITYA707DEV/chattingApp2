@@ -26,7 +26,7 @@ reducers:{
       
         state.typing = action.payload.boolean
         state.who = action.payload.user
-        console.log(state.typing)
+ 
     },
     resetTyping:()=>{
       return initialState

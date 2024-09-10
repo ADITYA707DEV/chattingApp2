@@ -9,8 +9,7 @@ import { updateGroupMembers } from '../redux/groupData'
 
 function UpdateGroup(props) {
   const groupData = useSelector((state) => { return state.groupData })
-  console.log("this is groupdate")
-  console.log(groupData)
+
   const userMembers = useSelector((state) => { return state.userDetail.userMembers })
   const userdetail = useSelector((state) => { return state.userDetail.userDetail })
   const [pic,setPic] = useState(null)
@@ -61,10 +60,9 @@ const updateGroupPic = async ()=>{
   }
   const toggleClass = (e) => {
     const parentDiv = (e.target.parentNode).offsetParent
-console.log(parentDiv)
+
     const b = parentDiv.nextSibling
-    console.log(parentDiv)
-   console.log(b)
+   
     // parentDiv.classList.toggleClass("hiddin")
     parentDiv.classList.add("hidden")
 
@@ -72,7 +70,7 @@ console.log(parentDiv)
   }
 
   const handleAddMembers = (e) => {
-    console.log("this id the running")
+   
     if ((groupInfo.members).find(user => user === e.target.value)) {
       return setGroupInfo({
         members: (groupInfo.members).filter((item) => {
@@ -99,8 +97,7 @@ console.log(parentDiv)
       })
     })
     const response = await res.json()
-    console.log("this is updated members")
-    console.log(response)
+
     if(res.status === 200){
  dispatch(updateGroupMembers({groupMembers:response.updatedGroups.members}))
     }

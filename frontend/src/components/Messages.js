@@ -37,7 +37,7 @@ let menu = document.getElementById("toggleMenu")
 menu.classList.toggle("hidden")
 }
 
- 
+
  
   const sendMessage = async  (e)=>{
     e.preventDefault()
@@ -70,7 +70,7 @@ dispatch(makingEvent({event:"messaging",data:{message:messageData,sender:userdet
    
 
   // }
-console.log(props.dm)
+
   return (
     <div className='' >
       <div id='nav' className=' h-12  border'>

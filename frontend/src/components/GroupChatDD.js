@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { updateUserDetail } from '../redux/userDetailSlice'
-
+import { setAlert } from '../redux/AlertSlice'
 
 function GroupChatDD(props) {
 const  navigate = useNavigate(null)
@@ -73,9 +73,15 @@ const  navigate = useNavigate(null)
       })
     })
     const response = await res.json()
+   if(res.status == 200){ dispatch(updateUserDetail({groupsUpdate:true,newGroups:response.newGroups.groups}))
+
+   dispatch(setAlert({show:true,text:"all the group members will be able to view your message once they refreshed their app, app is going to refresh itself now",heading:"important!"}))
+   setTimeout(()=>{
+    navigate(0)
+   },8000)
+ 
+  }
    
-    dispatch(updateUserDetail({groupsUpdate:true,newGroups:response.newGroups.groups}))
-  navigate(0)
   }
 
 
