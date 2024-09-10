@@ -15,7 +15,7 @@ connectToMongo()
 const http = require("http").Server(app)
 const io = require("socket.io")(http, {
 
-  cors: "*",
+  cors: ["http://localhost:3000","https://justchatting-sr35.onrender.com/"],
 })
 
 const accountRoute = require("./routes/signupLogin")
@@ -32,7 +32,7 @@ app.use(cookieParser())
 app.use(cors({
   credentials: true,
 
-  origin: ["*"]
+  origin: ["http://localhost:3000","https://justchatting-sr35.onrender.com/"]
 }))
 
 app.use(express.json())
