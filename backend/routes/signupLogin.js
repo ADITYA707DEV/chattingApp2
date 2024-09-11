@@ -208,7 +208,7 @@ router.post("/login",[body("email").isEmail(),body("password").isLength({min:5})
         res.send({message:"verified",user:user,members:members[0].connections,groups:members[0].groups})
     } catch (error) {
         res.status(500).send({message:"internal server error"})
-    
+    console.log(error)
     }
    
 

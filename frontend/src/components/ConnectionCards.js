@@ -20,7 +20,7 @@ function ConnectionCards() {
 
   const handleOnClick = async (e) => {
     
-    const res1 = await fetch("http://localhost:5000/chatting/makingchat",{
+    const res1 = await fetch("https://justchatting-sr35.onrender.com/chatting/makingchat",{
       method: "POST",
       headers: {
          "Content-Type": "application/json"

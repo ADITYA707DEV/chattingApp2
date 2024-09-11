@@ -25,7 +25,7 @@ function Loginpage() {
   const handleOnSubmit = async (e) => {
     e.preventDefault()
 
-    const response =  await fetch("http://localhost:5000/account/login", {
+    const response =  await fetch("https://justchatting-sr35.onrender.com/account/login", {
       method: "POST",
       headers: {
            "Content-Type":"application/json"

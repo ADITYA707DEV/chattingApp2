@@ -41,7 +41,7 @@ function Profile(props) {
     data.append("file", pic)
 setLoading(true)
     const response1 = await axios({
-      url: "http://localhost:5000/account/pic",
+      url: "https://justchatting-sr35.onrender.com/account/pic",
       method: "POST",
       withCredentials: true,
       data: data

@@ -41,7 +41,7 @@ menu.classList.toggle("hidden")
  
   const sendMessage = async  (e)=>{
     e.preventDefault()
-   const res  = await fetch("http://localhost:5000/chatting/chat",{
+   const res  = await fetch("https://justchatting-sr35.onrender.com/chatting/chat",{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
