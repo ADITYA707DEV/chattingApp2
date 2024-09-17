@@ -27,7 +27,7 @@ cloudinary.config({
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname,"../../frontend/src/images"))
+    cb(null, path.resolve(__dirname,"../","../","./frontend","/build"))
   },
   filename: function (req, file, cb) {
     const uniquePrefix = new Date().toISOString().replace(/:/g, '-') + Math.round(Math.random() * 1E9)
@@ -104,7 +104,7 @@ if(!id){
       folder:'profile_pic'
    });
    try {
-    fs.unlink(path.join(__dirname,`../../frontend/src/images/${req.file.filename}` ),(error)=>{
+    fs.unlink(path.resolve(__dirname,"../","../","./frontend",`/build/${req.file.filename}`) ,(error)=>{
      if(error){console.log(error)}
         
       })
@@ -150,7 +150,7 @@ router.post("/grouppic",verification1,upload.single("file"),async (req,res)=>{
         folder:'group_profile_pic'
      });
     try {
-      fs.unlink(path.join(__dirname,`../../frontend/src/images/${req.file.filename}` ),(error)=>{
+      fs.unlink((path.resolve(__dirname,"../","../","./frontend",`/build/${req.file.filename}`) ),(error)=>{
         if(error){console.log(error)}
       })
     } catch (error) {
