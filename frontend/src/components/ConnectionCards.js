@@ -48,7 +48,7 @@ if(res1.status == 200){
  
 }
   //  dispatch(resetQueryUser())
-  //   const res2 = await fetch("http://localhost:5000/chatting/getmessages", {
+  //   const res2 = await fetch("https://justchatting-sr35.onrender.com/chatting/getmessages", {
   //     method: "POST",
   //     headers: {
   //       "Content-Type": "application/json",
