@@ -28,7 +28,7 @@ function MemberCrads() {
 //  const  setPreviousClickedUserMemo = useMemo(()=>{previousClickedUser&&dispatch(makingEvent({event:"leave room",data:{user:previousClickedUser}}))},[previousClickedUser])
 const getGroupMessages = async  (gname,chatPic,isAdmin)=>{
   dispatch(resetMessageReceiveCart())
-  const res = await fetch("https://justchatting-sr35.onrender.com/chatting/getmessages",{
+  const res = await fetch("https://chattingapp2.onrender.com/chatting/getmessages",{
     method:"POST",
     headers:{
       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ setChatId(response.dms.chatid)
 
   
    dispatch(resetMessageReceiveCart())
-    const res = await fetch("https://justchatting-sr35.onrender.com/chatting/getmessages", {
+    const res = await fetch("https://chattingapp2.onrender.com/chatting/getmessages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

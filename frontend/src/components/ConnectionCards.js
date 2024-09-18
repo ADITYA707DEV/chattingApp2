@@ -20,7 +20,7 @@ function ConnectionCards() {
 
   const handleOnClick = async (e) => {
     
-    const res1 = await fetch("https://justchatting-sr35.onrender.com/chatting/makingchat",{
+    const res1 = await fetch("https://chattingapp2.onrender.com/chatting/makingchat",{
       method: "POST",
       headers: {
          "Content-Type": "application/json"
@@ -48,7 +48,7 @@ if(res1.status == 200){
  
 }
   //  dispatch(resetQueryUser())
-  //   const res2 = await fetch("https://justchatting-sr35.onrender.com/chatting/getmessages", {
+  //   const res2 = await fetch("https://chattingapp2.onrender.com/chatting/getmessages", {
   //     method: "POST",
   //     headers: {
   //       "Content-Type": "application/json",

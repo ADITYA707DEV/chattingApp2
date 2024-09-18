@@ -31,7 +31,7 @@ const updateGroupPic = async ()=>{
     data.append("file",pic)
   setLoading(true)
     const response1 = await axios({
-        url:"https://justchatting-sr35.onrender.com/account/grouppic",
+        url:"https://chattingapp2.onrender.com/account/grouppic",
         method:"POST",
         withCredentials:true,
         params:{
@@ -85,7 +85,7 @@ const updateGroupPic = async ()=>{
 
   const handleUpdateMembers = async () => {
     defaultClass()
-    const res = await fetch("https://justchatting-sr35.onrender.com/chatting/groupchat", {
+    const res = await fetch("https://chattingapp2.onrender.com/chatting/groupchat", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

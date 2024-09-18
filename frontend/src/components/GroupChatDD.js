@@ -59,7 +59,7 @@ const  navigate = useNavigate(null)
     defaultClass()
 
     
-    const res = await fetch("https://justchatting-sr35.onrender.com/chatting/groupchat", {
+    const res = await fetch("https://chattingapp2.onrender.com/chatting/groupchat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

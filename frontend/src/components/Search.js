@@ -40,7 +40,7 @@ function Search() {
       return  dispatch(setFilter({isFilter: true , filteredUser: search.email}))
     }
     
-        const res = await fetch("https://justchatting-sr35.onrender.com/account/getUser", {
+        const res = await fetch("https://chattingapp2.onrender.com/account/getUser", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

@@ -28,7 +28,7 @@ function Singuppage() {
         e.preventDefault()
 
 
-        const response2 = await fetch("https://justchatting-sr35.onrender.com/account/signup", {
+        const response2 = await fetch("https://chattingapp2.onrender.com/account/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

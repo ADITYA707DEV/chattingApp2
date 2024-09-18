@@ -4,7 +4,7 @@ class SocketClient{
 socket;
 
 connect(){
-    this.socket = io.connect("https://justchatting-sr35.onrender.com")
+    this.socket = io.connect("https://chattingapp2.onrender.com")
     return new Promise((resolve,reject)=>{
         this.socket.on("connect",()=>{resolve()})
         this.socket.on("connect_error",(error)=>{reject(error)})
