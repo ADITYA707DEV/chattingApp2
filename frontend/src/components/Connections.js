@@ -75,7 +75,7 @@ const groupElementVisibility = ()=>{
   // console.log(location.state)
 
   //   const getUserData = async  ()=>{
-  //     const res = await fetch("http://localhost:5000/account/getuserdata",{
+  //     const res = await fetch("https://chattingapp2.onrender.com/account/getuserdata",{
   //       method:"POST",
   //       headers:{
   //         "Content-Type": "application/json"

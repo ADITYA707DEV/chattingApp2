@@ -1,6 +1,5 @@
 import Connections from "./components/Connections";
-import Messages from "./components/Messages";
-import { useEffect } from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./react-router/ProtectedRoute";
 import Loginpage from "./components/Loginpage";
