@@ -5,6 +5,8 @@ import { resetQueryUser } from '../redux/queryUserSlice'
 import { setUserDetail } from '../redux/userDetailSlice'
 import { useNavigate } from 'react-router-dom'
 import { setAlert } from '../redux/AlertSlice'
+import { disonnectToSocket } from '../redux/ConnectingSocketSlice'
+import { resetUserDetail } from '../redux/userDetailSlice'
 
 
 function ConnectionCards() {
@@ -42,8 +44,12 @@ if(res1.status == 200){
 
    
    dispatch(setAlert({show:true,text:" the connected member will be able to view your message once they refreshed their app, app is going to refresh itself now",heading:"important!"}))
+
+
    setTimeout(()=>{
-    navigate(0)
+    dispatch(disonnectToSocket())
+    dispatch(resetUserDetail())
+    navigate("/login")
    },8000)
  
 }
